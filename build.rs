@@ -10,6 +10,7 @@ fn main() {
 
     let bindings = bindgen::Builder::default()
         .header("quirc/lib/quirc.h")
+        .header("quirc/lib/quirc_internal.h")
         .generate()
         .expect("Unable to generate bindings");
 
