@@ -1,4 +1,5 @@
 extern crate bindgen;
+extern crate cc;
 
 use std::env;
 use std::path::PathBuf;
@@ -17,4 +18,13 @@ fn main() {
     bindings
         .write_to_file(out_path.join("bindings.rs"))
         .expect("Couldn't write bindings!");
+
+    // Build quirc sources
+    cc::Build::new()
+        .file("quirc/lib/quirc.c")
+        .file("quirc/lib/decode.c")
+        .file("quirc/lib/identify.c")
+        .file("quirc/lib/quirc.c")
+        .file("quirc/lib/version_db.c")
+        .compile("libquirc.a");
 }
