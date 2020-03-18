@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/dlbeer/quirc.git
+	branch = master
+	commit = cbf911edf072d11d2e6a5a0059e46e8f316c5fcf
+	parent = 04683dfbde40fb720c644dac180852e0cb66f1bd
+	method = merge
+	cmdver = 0.4.1
